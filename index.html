@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="icon" href="logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>SkyCast</title>
+</head>
+<body class="bg-gradient-to-br from-blue-400 to-purple-600 min-h-screen flex justify-center items-center">
+    <div class="max-w-md bg-white p-8 rounded-md shadow-lg w-full h-auto">
+        <h1 class="text-3xl font-bold mb-6 text-slate-700 text-center">
+            SkyCast.. <br> A better way to get your weather instantly
+        </h1>
+        <form id="weather-form" class="mb-6 relative">
+            <label for="city" class="block text-blue-700 font-medium mb-2">
+                Enter City:
+            </label>
+            <div class="flex items-center">
+                <input type="text" id="city-input" name="city" class="mt-1 px-4 py-2 block w-64 h-12 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500 placeholder-gray-500" placeholder="Enter city name">
+                <button id="search-button" type="submit" class="ml-1 bg-blue-500 text-white py-2 px-4 h-12 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                    Get Weather
+                </button>
+            </div>
+        </form>
+
+        <!-- Weather info div initially hidden -->
+        <div id="weather-info" class="grid grid-cols-2 gap-4 opacity-0 transform translate-y-4 transition-all duration-500 ease-in-out" style="display: none;">
+            <h1 class="city" id="city-name">Loading city...</h1>
+            <div id="degree">Loading temperature...</div>
+            <div class="weather-icon">
+                <img src="img/clear.png" alt="Weather Icon" width="45px" id="icon">
+            </div>
+            <div class="weather-description" id="description">Loading description...</div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
