@@ -25,10 +25,9 @@ async function checkWeather(city) {
             icon.setAttribute("src", "img/cloudy.png");
         } else if (weather === "Clear") {
             icon.setAttribute("src", "img/clear.png");
-        } else {
-            icon.setAttribute("src", "img/default.png"); // Add a default icon for other weather types
+        } else if (weather === "Rain") {
+            icon.setAttribute("src", "img/rain.jpg"); // Add a default icon for other weather types
         }
-
         // Show the weather info with a scale-up effect
         weatherInfo.style.display = "grid"; // Change display to grid
         weatherInfo.classList.remove("opacity-0", "translate-y-4");
